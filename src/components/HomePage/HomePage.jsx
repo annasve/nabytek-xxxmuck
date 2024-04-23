@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { ProductItem } from '../ProductItem/ProductItem';
+import './HomePage.css';
 
 export const HomePage = () => {
   const [productInfo, setProductInfo] = useState(['test']);
@@ -22,9 +23,6 @@ export const HomePage = () => {
 
   return (
     <>
-      <p>I&rsquo;m the homepage!</p>
-      <p>Hello there!</p>
-      <hr />
       <section className="intro">
         <h1 className="intro__headline">Aktuální nabídka</h1>
         <div className="intro__description">
