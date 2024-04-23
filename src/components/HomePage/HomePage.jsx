@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { ProductItem } from '../ProductItem/ProductItem';
 import './HomePage.css';
+import { Link, Outlet } from 'react-router-dom';
 
 export const HomePage = () => {
   const [productInfo, setProductInfo] = useState(['test']);
@@ -23,18 +24,24 @@ export const HomePage = () => {
 
   return (
     <>
-      <section className="intro">
-        <h1 className="intro__headline">Aktuální nabídka</h1>
-        <div className="intro__description">
-          <p>Nejnovější prémiové produkty od předních českých designérů.</p>
-          <p>Doprava zdrama až k Vám domů. Na cenu nehleďte.</p>
-        </div>
-      </section>
-      <section className="productlist">
-        {productInfo.map(({ image, name, id }) => (
-          <ProductItem src={image} name={name} key={id} />
-        ))}
-      </section>
+      <nav>
+        <Link to="/product">Product page - test</Link>
+      </nav>
+      <main>
+        <Outlet />
+        <section className="intro">
+          <h1 className="intro__headline">Aktuální nabídka</h1>
+          <div className="intro__description">
+            <p>Nejnovější prémiové produkty od předních českých designérů.</p>
+            <p>Doprava zdrama až k Vám domů. Na cenu nehleďte.</p>
+          </div>
+        </section>
+        <section className="productlist">
+          {productInfo.map(({ image, name, id }) => (
+            <ProductItem src={image} name={name} key={id} />
+          ))}
+        </section>
+      </main>
     </>
   );
 };
