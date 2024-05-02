@@ -2,13 +2,13 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { ProductItem } from '../ProductItem/ProductItem';
 import './HomePage.css';
-import { Link, Outlet } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const HomePage = () => {
   const [productInfo, setProductInfo] = useState(['test']);
   //console.log('useState', productInfo);
 
-  //useEffect pro API produktů - posílám do child - products
+  //useEffect pro API produktů - UŽ NE posílám do child - products
   useEffect(() => {
     const fetchProducts = async () => {
       const response = await fetch(
@@ -28,7 +28,6 @@ export const HomePage = () => {
         <Link to="/product">Product page - test</Link>
       </nav>
       <main>
-        <Outlet />
         <section className="intro">
           <h1 className="intro__headline">Aktuální nabídka</h1>
           <div className="intro__description">

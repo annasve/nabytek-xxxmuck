@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
+
+//importy pro const router
+import { App } from './App.jsx';
 import { HomePage } from './components/HomePage/HomePage.jsx';
 import { ProductPage } from './components/ProductPage/ProductPage.jsx';
 
@@ -9,8 +12,11 @@ import { ProductPage } from './components/ProductPage/ProductPage.jsx';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <HomePage />,
-    children: [{ path: '/product', element: <ProductPage /> }],
+    element: <App />,
+    children: [
+      { path: '', element: <HomePage /> },
+      { path: '/product', element: <ProductPage /> },
+    ],
   },
 ]);
 
