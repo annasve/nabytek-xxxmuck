@@ -2,20 +2,17 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { ProductItem } from '../ProductItem/ProductItem';
 import './HomePage.css';
-import { Link } from 'react-router-dom';
 
 export const HomePage = () => {
-  const [productInfo, setProductInfo] = useState(['test']);
-  //console.log('useState', productInfo);
+  const [productInfo, setProductInfo] = useState([]);
 
-  //useEffect pro API produktů - UŽ NE posílám do child - products
+  //useEffect pro API produktů (useEffect protože se jedná jen o tréninkový projekt)
   useEffect(() => {
     const fetchProducts = async () => {
       const response = await fetch(
         'https://apps.kodim.cz/react-2/xxxmuck/products',
       );
       const data = await response.json();
-      //console.log(data);
       setProductInfo(data);
     };
 
@@ -23,24 +20,19 @@ export const HomePage = () => {
   }, []);
 
   return (
-    <>
-      <nav>
-        <Link to="/product">Product page - test</Link>
-      </nav>
-      <main>
-        <section className="intro">
-          <h1 className="intro__headline">Aktuální nabídka</h1>
-          <div className="intro__description">
-            <p>Nejnovější prémiové produkty od předních českých designérů.</p>
-            <p>Doprava zdrama až k Vám domů. Na cenu nehleďte.</p>
-          </div>
-        </section>
-        <section className="productlist">
-          {productInfo.map(({ image, name, id }) => (
-            <ProductItem src={image} name={name} key={id} />
-          ))}
-        </section>
-      </main>
-    </>
+    <main>
+      <section className="intro">
+        <h1 className="intro__headline">Aktuální nabídka</h1>
+        <div className="intro__description">
+          <p>Nejnovější prémiové produkty od předních českých designérů.</p>
+          <p>Doprava zdarma až k Vám domů. Na cenu nehleďte.</p>
+        </div>
+      </section>
+      <section className="productlist">
+        {productInfo.map(({ image, name, id }) => (
+          <ProductItem src={image} name={name} key={id} id={id} />
+        ))}
+      </section>
+    </main>
   );
 };
