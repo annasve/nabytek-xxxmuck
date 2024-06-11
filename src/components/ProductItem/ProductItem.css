@@ -1,0 +1,15 @@
+.product-description {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.img-container__home {
+  max-width: 300px;
+}
+
+.img__home {
+  width: 100%;
+  aspect-ratio: 1;
+}

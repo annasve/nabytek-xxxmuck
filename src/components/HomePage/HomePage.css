@@ -1,6 +1,44 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* intro text on the homepage */
+
+.intro {
+  padding: 30px;
+}
+
+.intro__headline {
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.intro__description {
+  color: gray;
+  margin-top: 3rem;
+  line-height: 1.5rem;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 767px) {
+  .intro__description {
+    text-align: left;
+  }
+}
+
+/* product list on the homepage */
+
+.productlist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .productlist {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    justify-content: flex-start;
+  }
+
+  .product-container {
+    flex-basis: 30%;
+  }
 }

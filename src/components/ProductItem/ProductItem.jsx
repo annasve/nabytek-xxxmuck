@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import './ProductItem.css';
+
 export const ProductItem = ({ src, name, id }) => {
   //--React prop types
   ProductItem.propTypes = {
@@ -11,12 +13,10 @@ export const ProductItem = ({ src, name, id }) => {
   return (
     <div className="product-container">
       <Link to={`product/${id}`}>
-        <div className="img-container">
-          <img src={src} alt="kus nábytku" />
+        <div className="img-container__home">
+          <img className="img__home" src={src} alt="kus nábytku" />
         </div>
-        <div className="product-description">
-          <p>{name}</p>
-        </div>
+        <p className="product-description">{name}</p>
       </Link>
     </div>
   );

@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import './ProductPage.css';
 
 export const ProductPage = () => {
   const { productId } = useParams();
@@ -20,10 +21,18 @@ export const ProductPage = () => {
   }, []);
 
   return (
-    <>
-      <img src={productInfo.image} alt="kus nábytku" />
-      <h2>{productInfo.name}</h2>
-      <button>Objednat</button>
-    </>
+    <section className="product-card">
+      <div className="product-card__image-container">
+        <img
+          className="product-card__image"
+          src={productInfo.image}
+          alt="kus nábytku"
+        />
+      </div>
+      <div>
+        <h2 className="product-card__name">{productInfo.name}</h2>
+        <button className="card__button">Objednat</button>
+      </div>
+    </section>
   );
 };

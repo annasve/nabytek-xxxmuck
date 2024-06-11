@@ -1,0 +1,35 @@
+.product-card {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 4rem;
+  column-gap: 1.5rem;
+  justify-content: center;
+}
+
+.product-card__image-container {
+  max-width: 300px;
+}
+
+.product-card__image {
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.product-card__name {
+  line-height: 2;
+  font-weight: 600;
+}
+
+.card__button:hover {
+  background-color: gray;
+}
+
+.card__button {
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.1rem;
+  font-family: inherit;
+  background: #414141;
+  cursor: pointer;
+  color: whitesmoke;
+}

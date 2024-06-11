@@ -22,7 +22,7 @@ export const HomePage = () => {
   return (
     <main>
       <section className="intro">
-        <h1 className="intro__headline">Aktuální nabídka</h1>
+        <h2 className="intro__headline">Aktuální nabídka</h2>
         <div className="intro__description">
           <p>Nejnovější prémiové produkty od předních českých designérů.</p>
           <p>Doprava zdarma až k Vám domů. Na cenu nehleďte.</p>
